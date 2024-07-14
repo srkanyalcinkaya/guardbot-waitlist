@@ -109,7 +109,7 @@ export default function Home() {
                                 framerProps={{
                                     show: { transition: { delay: 1 } },
                                 }}
-                                text="Guard AML Bot ile AML/KYC süreclerinizi hızlı ve otomatik hale getirin, uyum maliyetlerinizi azaltın, güvenli, hızlı ve kolayca yöntilebilir işlemlerle hem işinizi koruyun."
+                                text="GuardAMLBot ile AML/KYC süreclerinizi hızlı ve otomatik hale getirin, uyum maliyetlerinizi azaltın, güvenli, hızlı ve kolayca yöntilebilir işlemlerle hem işinizi koruyun."
                             />
                             <div className="z-10 relative  w-full md:max-w-sm  items-center space-x-2 flex mt-10 ">
                                 <Input type="email" placeholder="Email adress" className="h-14" />
