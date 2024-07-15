@@ -18,6 +18,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import OrbitingCircles from "@/components/magicui/orbiting-circles";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { icon1, icon2, icon3, icon4, icon5 } from "@/assets/images";
+import BlurFade from "@/components/magicui/blur-fade";
 
 
 const Circle = forwardRef(({ className, children }, ref) => {
@@ -260,28 +261,28 @@ export default function Home() {
                     <div className="flex  w-full flex-col gap-8 h-full lg:flex-row flex-1">
                         {
                             services.map(item => (
-
-                                <MagicCard
-                                    className="cursor-pointer flex flex-1 text-start rounded-2xl  flex-col items-start  shadow-2xl p-9  max-h-[420px] h-auto "
-                                    gradientColor={"#D9D9D955"}
-                                    key={item.id}
-                                >
-                                    <div className="w-full h-full flex flex-col items-start justify-start ">
-                                        <div className="max-w-16 mb-8">
-                                            <img src={item.icon} alt="" className="w-full" loading="lazy" width={"144"} height={"139"} />
+                                <BlurFade delay={0.25 + item.id / 30} inView className={"w-full max-h-[420px] h-auto "}>
+                                    <MagicCard
+                                        className="cursor-pointer flex flex-1 text-start rounded-2xl  flex-col items-start  shadow-2xl p-9  "
+                                        gradientColor={"#D9D9D955"}
+                                        key={item.id}
+                                    >
+                                        <div className="w-full h-full flex flex-col items-start justify-start ">
+                                            <div className="max-w-16 mb-8">
+                                                <img src={item.icon} alt="" className="w-full" loading="lazy" width={"144"} height={"139"} />
+                                            </div>
+                                            <h3 className="text-2xl font-semibold  mb-5">
+                                                {item.title}
+                                            </h3>
+                                            <p className="text-gray-400 text-sm">{item.caption}</p>
                                         </div>
-                                        <h3 className="text-2xl font-semibold  mb-5">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-gray-400 text-sm">{item.caption}</p>
-                                    </div>
-                                </MagicCard>
+                                    </MagicCard>
+                                </BlurFade>
                             ))
                         }
 
                     </div>
                 </section>
-
                 <section className="mx-auto container  min-h-screen flex items-center justify-center" id="faq">
                     <div className="w-full h-full">
                         <FadeText
@@ -292,75 +293,74 @@ export default function Home() {
                             }}
                             text="FAQs"
                         />
-                        <div className="flex flex-col md:flex-row items-center gap-12">
+                        <BlurFade delay={0.25} inView>
+                            <div className="flex flex-col md:flex-row items-center gap-12">
 
-                            <Accordion type="single" collapsible className="w-full mt-10">
-                                <AccordionItem value="item-1">
-                                    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                                    <AccordionContent>
-                                        Yes. It adheres to the WAI-ARIA design pattern.
-                                    </AccordionContent>
-                                </AccordionItem>
-                                <AccordionItem value="item-2">
-                                    <AccordionTrigger>Is it styled?</AccordionTrigger>
-                                    <AccordionContent>
-                                        Yes. It comes with default styles that matches the other
-                                        components&apos; aesthetic.
-                                    </AccordionContent>
-                                </AccordionItem>
-                                <AccordionItem value="item-3">
-                                    <AccordionTrigger>Is it animated?</AccordionTrigger>
-                                    <AccordionContent>
-                                        Yes. It&apos;s animated by default, but you can disable it if you
-                                        prefer.
-                                    </AccordionContent>
-                                </AccordionItem>
-                            </Accordion>
-                            <div className="relative md:flex hidden h-[500px] w-full flex-col items-center justify-center overflow-hidden   ">
+                                <Accordion type="single" collapsible className="w-full mt-10">
+                                    <AccordionItem value="item-1">
+                                        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                                        <AccordionContent>
+                                            Yes. It adheres to the WAI-ARIA design pattern.
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                    <AccordionItem value="item-2">
+                                        <AccordionTrigger>Is it styled?</AccordionTrigger>
+                                        <AccordionContent>
+                                            Yes. It comes with default styles that matches the other
+                                            components&apos; aesthetic.
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                    <AccordionItem value="item-3">
+                                        <AccordionTrigger>Is it animated?</AccordionTrigger>
+                                        <AccordionContent>
+                                            Yes. It&apos;s animated by default, but you can disable it if you
+                                            prefer.
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
+                                <div className="relative md:flex hidden h-[500px] w-full flex-col items-center justify-center overflow-hidden   ">
 
-                                {/* Inner Circles */}
-                                <OrbitingCircles
-                                    className="size-[30px] border-none bg-transparent"
-                                    duration={20}
-                                    delay={20}
-                                    radius={80}
-                                >
-                                    <Icons.whatsapp />
-                                </OrbitingCircles>
-                                <OrbitingCircles
-                                    className="size-[30px] border-none bg-transparent"
-                                    duration={20}
-                                    delay={10}
-                                    radius={80}
-                                >
-                                    <Icons.notion />
-                                </OrbitingCircles>
+                                    {/* Inner Circles */}
+                                    <OrbitingCircles
+                                        className="size-[30px] border-none bg-transparent"
+                                        duration={20}
+                                        delay={20}
+                                        radius={80}
+                                    >
+                                        <Icons.whatsapp />
+                                    </OrbitingCircles>
+                                    <OrbitingCircles
+                                        className="size-[30px] border-none bg-transparent"
+                                        duration={20}
+                                        delay={10}
+                                        radius={80}
+                                    >
+                                        <Icons.notion />
+                                    </OrbitingCircles>
 
-                                {/* Outer Circles (reverse) */}
-                                <OrbitingCircles
-                                    className="size-[50px] border-none bg-transparent"
-                                    radius={190}
-                                    duration={20}
-                                    reverse
-                                >
-                                    <Icons.googleDrive />
-                                </OrbitingCircles>
-                                <OrbitingCircles
-                                    className="size-[50px] border-none bg-transparent"
-                                    radius={190}
-                                    duration={20}
-                                    delay={20}
-                                    reverse
-                                >
-                                    <Icons.googleDocs />
-                                </OrbitingCircles>
+                                    {/* Outer Circles (reverse) */}
+                                    <OrbitingCircles
+                                        className="size-[50px] border-none bg-transparent"
+                                        radius={190}
+                                        duration={20}
+                                        reverse
+                                    >
+                                        <Icons.googleDrive />
+                                    </OrbitingCircles>
+                                    <OrbitingCircles
+                                        className="size-[50px] border-none bg-transparent"
+                                        radius={190}
+                                        duration={20}
+                                        delay={20}
+                                        reverse
+                                    >
+                                        <Icons.googleDocs />
+                                    </OrbitingCircles>
+                                </div>
                             </div>
-                        </div>
+                        </BlurFade>
                     </div>
                 </section>
-
-
-
             </main >
         </>
     )
