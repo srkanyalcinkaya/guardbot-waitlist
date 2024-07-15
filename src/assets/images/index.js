@@ -1,0 +1,5 @@
+export { default as icon1 } from "./icon-1.webp"
+export { default as icon2 } from "./icon-2.webp"
+export { default as icon3 } from "./icon-3.webp"
+export { default as icon4 } from "./icon-4.webp"
+export { default as icon5 } from "./icon-5.webp"

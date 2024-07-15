@@ -16,6 +16,9 @@ import {
 } from "@/components/ui/accordion"
 import { BorderBeam } from "@/components/magicui/border-beam";
 import OrbitingCircles from "@/components/magicui/orbiting-circles";
+import { MagicCard } from "@/components/magicui/magic-card";
+import { icon1, icon2, icon3, icon4, icon5 } from "@/assets/images";
+
 
 const Circle = forwardRef(({ className, children }, ref) => {
     return (
@@ -30,6 +33,41 @@ const Circle = forwardRef(({ className, children }, ref) => {
         </div>
     )
 })
+
+const services = [
+    {
+        id: 1,
+        icon: icon1,
+        title: "AML/KYT screening",
+        caption: "API solutions that empower AML compliance tools within your current system. All transactions are automatically verified to comply with AML and FATF requirements and reduce your business risk exposure."
+    },
+    {
+        id: 2,
+        icon: icon2,
+        title: "KYC for business",
+        caption: "The streamlined and automated verification process empowers your business to swiftly onboard customers, reducing manual effort and mitigating identity fraud and illicit activity risks."
+    },
+    {
+        id: 3,
+        icon: icon3,
+        title: "AML/KYC procedures",
+        caption: "Launch your crypto venture with ease, simplicity, and confidence through our streamlined AML and KYC consulting, ensuring smooth compliance and effective risk management right from the beginning."
+    },
+    {
+        id: 4,
+        icon: icon4,
+        title: "Corporate accounts at CEX/EMI",
+        caption: "Streamline corporate account opening on CEX EMI with our expert assistance, ensuring your focus remains on business growth in the crypto industry."
+    },
+    {
+        id: 5,
+        icon: icon5,
+        title: "Blockchain investigations",
+        caption: "Recover stolen cryptocurrencies with AMLBot's expert blockchain investigations, swiftly identifying culprits and tracing funds for effective recovery."
+    },
+]
+
+
 export default function Home() {
     const containerRef = useRef(null)
     const div1Ref = useRef(null)
@@ -77,20 +115,20 @@ export default function Home() {
                     "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
                 )}
             />
-            <main className="mx-auto flex-1 overflow-hidden relative  md:px-8 mt-20 max-w-[90rem]  ">
-                <section className="px-6 text-center">
+            <main className="mx-auto flex-1 px-6 overflow-hidden relative  md:px-8 mt-20 max-w-[90rem] space-y-20 md:space-y-0  ">
+                <section className=" text-center min-h-screen">
 
                     <div className="z-10 relative flex min-h-[4rem] items-center justify-center mb-10">
-                        <div
+                        <a href="#faq"
                             className={cn(
                                 "group rounded-full border border-black/5 bg-neutral-100 text-xs text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
                             )}
                         >
                             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                                <span>✨ Introducing Magic UI</span>
+                                <span>✨ Introducing GuardAMLBot</span>
                                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                             </AnimatedShinyText>
-                        </div>
+                        </a>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-20 h-auto">
@@ -109,7 +147,7 @@ export default function Home() {
                                 framerProps={{
                                     show: { transition: { delay: 1 } },
                                 }}
-                                text="GuardAMLBot ile AML/KYC süreclerinizi hızlı ve otomatik hale getirin, uyum maliyetlerinizi azaltın, güvenli, hızlı ve kolayca yöntilebilir işlemlerle hem işinizi koruyun."
+                                text="GuardAMLBot ile AML/KYC süreclerinizi hızlı ve otomatik hale getirin, uyum maliyetlerinizi azaltın. Güvenli, hızlı ve kolayca yöntilebilir işlemlerle hem işinizi koruyun."
                             />
                             <div className="z-10 relative  w-full md:max-w-sm  items-center space-x-2 flex mt-10 ">
                                 <Input type="email" placeholder="Email adress" className="h-14" />
@@ -119,7 +157,7 @@ export default function Home() {
 
                         <div>
                             <div
-                                className="z-20 relative flex md:h-[500px] h-[360px] w-full items-center justify-center overflow-hidden rounded-lg  bg-white/60 md:p-0 p-4 md:shadow-xl "
+                                className="z-20 relative flex md:h-[500px] h-[360px] w-full items-center justify-center overflow-hidden rounded-lg  bg-white/60  p-4 md:shadow-xl "
                                 ref={containerRef}
                             >
                                 <BorderBeam size={250} duration={12} delay={9} />
@@ -202,285 +240,128 @@ export default function Home() {
 
 
                 </section>
-                <section className="text-gray-700   overflow-hidden  ">
-
-                    <div className="container px-5 py-24 mx-auto flex flex-wrap">
-                        <div className="lg:w-1/4 mt-48 hidden lg:block">
-                            <div className="mt-px border-t border-gray-300 border-b border-l rounded-tl-lg rounded-bl-lg overflow-hidden">
-                                <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start -mt-px">Fingerstache disrupt</p>
-                                <p className="text-gray-900 h-12 text-center px-4 flex items-center justify-start">Franzen hashtag</p>
-                                <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">Tilde art party</p>
-                                <p className="text-gray-900 h-12 text-center px-4 flex items-center justify-start">Banh mi cornhole</p>
-                                <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">Waistcoat squid hexagon</p>
-                                <p className="text-gray-900 h-12 text-center px-4 flex items-center justify-start">Pinterest occupy authentic</p>
-                                <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">Brooklyn helvetica</p>
-                                <p className="text-gray-900 h-12 text-center px-4 flex items-center justify-start">Long Feature Two</p>
-                                <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">Feature One</p>
-                            </div>
-                        </div>
-                        <div className="flex lg:w-3/4 w-full flex-wrap lg:border border-gray-300 rounded-lg">
-                            <div className="lg:w-1/3 lg:mt-px w-full mb-10 lg:mb-0 border-2 border-gray-300 lg:border-none rounded-lg lg:rounded-none">
-                                <div className="px-2 text-center h-48 flex flex-col items-center justify-center">
-                                    <h3 className="tracking-widest">START</h3>
-                                    <h2 className="text-5xl text-gray-900 font-medium leading-none mb-4 mt-2">Free</h2>
-                                    <span className="text-sm text-gray-600">Next 3 months</span>
-                                </div>
-                                <p className="bg-gray-100 text-gray-600 h-12 text-center px-2 flex items-center -mt-px justify-center border-t border-gray-300">Schlitz single-origin</p>
-                                <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="h-12 text-gray-600 px-6 text-center leading-relaxed flex items-center justify-center">Feature</p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                {/* <div className="border-t border-gray-300 p-6 text-center rounded-bl-lg">
-                                    <button className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">Button
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                                            <path d="M5 12h14M12 5l7 7-7 7" />
-                                        </svg>
-                                    </button>
-                                    <p className="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
-                                </div> */}
-                            </div>
-                            <div className="lg:w-1/3 lg:-mt-px w-full mb-10 lg:mb-0 border-2 rounded-lg border-indigo-500 relative">
-                                <span className="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">POPULAR</span>
-                                <div className="px-2 text-center h-48 flex flex-col items-center justify-center">
-                                    <h3 className="tracking-widest">PRO</h3>
-                                    <h2 className="text-5xl text-gray-900 font-medium flex items-center justify-center leading-none mb-4 mt-2">$38
-                                        <span className="text-gray-600 text-base ml-1">/mo</span>
-                                    </h2>
-                                    <span className="text-sm text-gray-600">Charging $456 per year</span>
-                                </div>
-                                <p className="bg-gray-100 text-gray-600 h-12 text-center px-2 flex items-center -mt-px justify-center border-t border-gray-300">Schlitz single-origin</p>
-                                <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="h-12 text-gray-600 text-center leading-relaxed flex items-center justify-center">Feature</p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                {/* <div className="p-6 text-center border-t border-gray-300">
-                                    <button className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">Button
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                                            <path d="M5 12h14M12 5l7 7-7 7" />
-                                        </svg>
-                                    </button>
-                                    <p className="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
-                                </div> */}
-                            </div>
-                            <div className="lg:w-1/3 w-full lg:mt-px border-2 border-gray-300 lg:border-none rounded-lg lg:rounded-none">
-                                <div className="px-2 text-center h-48 flex flex-col items-center justify-center">
-                                    <h3 className="tracking-widest">BUSINESS</h3>
-                                    <h2 className="text-5xl text-gray-900 font-medium flex items-center justify-center leading-none mb-4 mt-2">$54
-                                        <span className="text-gray-600 text-base ml-1">/mo</span>
-                                    </h2>
-                                    <span className="text-sm text-gray-600">Charging $648 per year</span>
-                                </div>
-                                <p className="bg-gray-100 text-gray-600 h-12 text-center px-2 flex items-center -mt-px justify-center border-t border-gray-300">Schlitz single-origin</p>
-                                <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="h-12 text-gray-600 text-center leading-relaxed flex items-center justify-center">Feature</p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} className="w-3 h-3" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5" />
-                                        </svg>
-                                    </span>
-                                </p>
-                                <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12" />
-                                    </svg>
-                                </p>
-                                {/* <div className="p-6 text-center border-t border-gray-300">
-                                    <button className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">Button
-                                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                                            <path d="M5 12h14M12 5l7 7-7 7" />
-                                        </svg>
-                                    </button>
-                                    <p className="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
-                                </div> */}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section className="mx-auto container mb-20">
+                <section className=" min-h-screen flex flex-col text-center items-center gap-10 ">
                     <FadeText
-                        className="text-4xl font-bold text-black dark:text-white "
+                        className="text-3xl md:text-5xl  font-bold text-black text-center dark:text-white "
                         direction="down"
                         framerProps={{
                             show: { transition: { delay: 0.6 } },
                         }}
-                        text="FAQs"
+                        text="AMLBot’s services"
                     />
-                    <div className="flex items-center gap-12">
+                    <FadeText
+                        className="text-xl font-medium text-center text-gray-4  00 dark:text-white "
+                        direction="down"
+                        framerProps={{
+                            show: { transition: { delay: 0.6 } },
+                        }}
+                        text="We provide full pack of options for safe work with crypto"
+                    />
+                    <div className="flex  w-full flex-col gap-8 h-full lg:flex-row flex-1">
+                        {
+                            services.map(item => (
 
-                        <Accordion type="single" collapsible className="w-full mt-10">
-                            <AccordionItem value="item-1">
-                                <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                                <AccordionContent>
-                                    Yes. It adheres to the WAI-ARIA design pattern.
-                                </AccordionContent>
-                            </AccordionItem>
-                            <AccordionItem value="item-2">
-                                <AccordionTrigger>Is it styled?</AccordionTrigger>
-                                <AccordionContent>
-                                    Yes. It comes with default styles that matches the other
-                                    components&apos; aesthetic.
-                                </AccordionContent>
-                            </AccordionItem>
-                            <AccordionItem value="item-3">
-                                <AccordionTrigger>Is it animated?</AccordionTrigger>
-                                <AccordionContent>
-                                    Yes. It&apos;s animated by default, but you can disable it if you
-                                    prefer.
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
-                        <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden   ">
+                                <MagicCard
+                                    className="cursor-pointer flex flex-1 text-start rounded-2xl  flex-col items-start  shadow-2xl p-9  max-h-[420px] h-auto "
+                                    gradientColor={"#D9D9D955"}
+                                    key={item.id}
+                                >
+                                    <div className="w-full h-full flex flex-col items-start justify-start ">
+                                        <div className="max-w-16 mb-8">
+                                            <img src={item.icon} alt="" className="w-full" loading="lazy" width={"144"} height={"139"} />
+                                        </div>
+                                        <h3 className="text-2xl font-semibold  mb-5">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-gray-400 text-sm">{item.caption}</p>
+                                    </div>
+                                </MagicCard>
+                            ))
+                        }
 
-                            {/* Inner Circles */}
-                            <OrbitingCircles
-                                className="size-[30px] border-none bg-transparent"
-                                duration={20}
-                                delay={20}
-                                radius={80}
-                            >
-                                <Icons.whatsapp />
-                            </OrbitingCircles>
-                            <OrbitingCircles
-                                className="size-[30px] border-none bg-transparent"
-                                duration={20}
-                                delay={10}
-                                radius={80}
-                            >
-                                <Icons.notion />
-                            </OrbitingCircles>
+                    </div>
+                </section>
 
-                            {/* Outer Circles (reverse) */}
-                            <OrbitingCircles
-                                className="size-[50px] border-none bg-transparent"
-                                radius={190}
-                                duration={20}
-                                reverse
-                            >
-                                <Icons.googleDrive />
-                            </OrbitingCircles>
-                            <OrbitingCircles
-                                className="size-[50px] border-none bg-transparent"
-                                radius={190}
-                                duration={20}
-                                delay={20}
-                                reverse
-                            >
-                                <Icons.googleDocs />
-                            </OrbitingCircles>
+                <section className="mx-auto container  min-h-screen flex items-center justify-center" id="faq">
+                    <div className="w-full h-full">
+                        <FadeText
+                            className="text-4xl font-bold text-black dark:text-white "
+                            direction="down"
+                            framerProps={{
+                                show: { transition: { delay: 0.6 } },
+                            }}
+                            text="FAQs"
+                        />
+                        <div className="flex flex-col md:flex-row items-center gap-12">
+
+                            <Accordion type="single" collapsible className="w-full mt-10">
+                                <AccordionItem value="item-1">
+                                    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                                    <AccordionContent>
+                                        Yes. It adheres to the WAI-ARIA design pattern.
+                                    </AccordionContent>
+                                </AccordionItem>
+                                <AccordionItem value="item-2">
+                                    <AccordionTrigger>Is it styled?</AccordionTrigger>
+                                    <AccordionContent>
+                                        Yes. It comes with default styles that matches the other
+                                        components&apos; aesthetic.
+                                    </AccordionContent>
+                                </AccordionItem>
+                                <AccordionItem value="item-3">
+                                    <AccordionTrigger>Is it animated?</AccordionTrigger>
+                                    <AccordionContent>
+                                        Yes. It&apos;s animated by default, but you can disable it if you
+                                        prefer.
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                            <div className="relative md:flex hidden h-[500px] w-full flex-col items-center justify-center overflow-hidden   ">
+
+                                {/* Inner Circles */}
+                                <OrbitingCircles
+                                    className="size-[30px] border-none bg-transparent"
+                                    duration={20}
+                                    delay={20}
+                                    radius={80}
+                                >
+                                    <Icons.whatsapp />
+                                </OrbitingCircles>
+                                <OrbitingCircles
+                                    className="size-[30px] border-none bg-transparent"
+                                    duration={20}
+                                    delay={10}
+                                    radius={80}
+                                >
+                                    <Icons.notion />
+                                </OrbitingCircles>
+
+                                {/* Outer Circles (reverse) */}
+                                <OrbitingCircles
+                                    className="size-[50px] border-none bg-transparent"
+                                    radius={190}
+                                    duration={20}
+                                    reverse
+                                >
+                                    <Icons.googleDrive />
+                                </OrbitingCircles>
+                                <OrbitingCircles
+                                    className="size-[50px] border-none bg-transparent"
+                                    radius={190}
+                                    duration={20}
+                                    delay={20}
+                                    reverse
+                                >
+                                    <Icons.googleDocs />
+                                </OrbitingCircles>
+                            </div>
                         </div>
                     </div>
                 </section>
 
 
 
-            </main>
+            </main >
         </>
     )
 }
@@ -508,14 +389,14 @@ const Icons = {
         </svg>
     ),
     openai: () => (
-        <svg
-            width="100"
-            height="100"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" />
+        <svg width={180} height={180} viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M101.821 26.3584L25.4538 102.726C21.9391 106.241 21.9391 111.939 25.4538 115.454C28.9685 118.969 34.667 118.969 38.1817 115.454L114.549 39.0863C118.064 35.5716 118.064 29.8731 114.549 26.3583C111.035 22.8436 105.336 22.8436 101.821 26.3584Z" fill="#3A57E8" />
+            <path d="M140.001 64.538L63.6336 140.906C60.1189 144.42 60.1189 150.119 63.6336 153.633C67.1483 157.148 72.8468 157.148 76.3615 153.633L152.729 77.2659C156.244 73.7512 156.244 68.0527 152.729 64.538C149.214 61.0233 143.516 61.0233 140.001 64.538Z" fill="#3A57E8" />
+            <path d="M114.456 140.823L76.2723 102.639C72.7576 99.1246 67.0591 99.1246 63.5444 102.639C60.0296 106.154 60.0296 111.853 63.5444 115.367L101.728 153.551C105.243 157.066 110.941 157.066 114.456 153.551C117.971 150.036 117.971 144.338 114.456 140.823Z" fill="#3A57E8" />
+            <path d="M152.736 102.735L76.3687 26.3679C72.854 22.8532 67.1555 22.8531 63.6408 26.3679C60.1261 29.8826 60.1261 35.5811 63.6408 39.0958L140.008 115.463C143.523 118.978 149.222 118.978 152.736 115.463C156.251 111.949 156.251 106.25 152.736 102.735Z" fill="#3A57E8" />
         </svg>
+
+
     ),
     googleDrive: () => (
         <svg
