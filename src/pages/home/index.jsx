@@ -258,7 +258,7 @@ export default function Home() {
                         }}
                         text="We provide full pack of options for safe work with crypto"
                     />
-                    <div className="flex  w-full flex-col gap-8 h-full lg:flex-row flex-1">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 h-full w-full ">
                         {
                             services.map(item => (
                                 <BlurFade delay={0.25 + item.id / 30} inView className={"w-full max-h-[420px] h-auto "}>
