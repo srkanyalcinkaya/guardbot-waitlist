@@ -19,8 +19,11 @@ import OrbitingCircles from "@/components/magicui/orbiting-circles";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { icon1, icon2, icon3, icon4, icon5 } from "@/assets/images";
 import BlurFade from "@/components/magicui/blur-fade";
-import axios from "axios";
-
+import {
+    ResizableHandle,
+    ResizablePanel,
+    ResizablePanelGroup,
+} from "@/components/ui/resizable"
 
 const Circle = forwardRef(({ className, children }, ref) => {
     return (
@@ -192,7 +195,7 @@ export default function Home() {
                                 framerProps={{
                                     show: { transition: { delay: 0.8 } },
                                 }}
-                                text="GuardAmlBot: Güvenli ve Hızlı AML/KYC Çözümleri"
+                                text="Otomatik AML/KYC Çözümleri"
                             />
                             <FadeText
                                 className="z-10 relative text-base  md:text-xl text-balance text-gray-400"
@@ -200,7 +203,7 @@ export default function Home() {
                                 framerProps={{
                                     show: { transition: { delay: 1 } },
                                 }}
-                                text="Blockchain işlemlerinde regülasyon uyumu, hız ve güvenlik sağlayan en yenilikçi platform"
+                                text="Kripto Varlıklar üzerindeki işlemlerde otomatik AML denetimini gerçekleştirerek regülasyon uyumu, hız ve güvenlik sağlayan en yenilikçi AML platformu"
                             />
                             <form onSubmit={(e) => Submit(e)} className="z-10 relative  w-full md:max-w-sm  items-center space-x-2 flex mt-10 ">
                                 <Input type="email" name="Email" placeholder="Email adres" className="h-14" />
@@ -334,6 +337,47 @@ export default function Home() {
                         }
 
                     </div>
+                </section>
+                <section className=" min-h-screen flex flex-col text-center items-center gap-10 ">
+                    <FadeText
+                        className="text-3xl md:text-5xl  font-bold text-black text-center dark:text-white "
+                        direction="down"
+                        framerProps={{
+                            show: { transition: { delay: 0.6 } },
+                        }}
+                        text="Platformun Faydaları"
+                    />
+                    <ResizablePanelGroup
+                        direction="horizontal"
+                        className="   rounded-lg border"
+                    >
+                        <ResizablePanel defaultSize={400}>
+                            <div className="flex h-[200px] items-center justify-center p-12 flex-col gap-4">
+                                <span className="font-bold text-2xl">Düşük Ücretler</span>
+                                <p  className="text-sm text-gray-400">
+                                    Otomatikleştirilmiş AML/KYC süreçleri sayesinde manuel işlemlere kıyasla daha düşük maliyetler sunulur.
+                                </p>
+                            </div>
+                        </ResizablePanel>
+                        <ResizableHandle />
+                        <ResizablePanel defaultSize={800}>
+                            <ResizablePanelGroup direction="vertical">
+                                <ResizablePanel defaultSize={400}>
+                                    <div className="flex h-full items-center justify-center p-12 flex-col gap-4">
+                                        <span className="font-bold text-2xl">Hız</span>
+                                        <p className="text-sm text-gray-400">Gerçek zamanlı doğrulama ve otomatik süreçler ile işlemler çok daha hızlı bir şekilde gerçekleştirilir.</p>
+                                    </div>
+                                </ResizablePanel>
+                                <ResizableHandle />
+                                <ResizablePanel defaultSize={400}>
+                                    <div className="flex h-full items-center justify-center p-12 flex-col gap-4">
+                                        <span className="font-bold text-2xl">Temiz Para Politikası</span>
+                                        <p  className="text-sm text-gray-400">Her işlemde detaylı AML/KYC kontrolleri yapılarak yasa dışı faaliyetlerin önüne geçilir. Temiz ve güvenli para politikası sağlanır.</p>
+                                    </div>
+                                </ResizablePanel>
+                            </ResizablePanelGroup>
+                        </ResizablePanel>
+                    </ResizablePanelGroup>
                 </section>
                 <section className="mx-auto container  min-h-screen flex items-center justify-center" id="faq">
                     <div className="w-full h-full">
