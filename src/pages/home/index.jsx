@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
@@ -19,6 +19,7 @@ import OrbitingCircles from "@/components/magicui/orbiting-circles";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { icon1, icon2, icon3, icon4, icon5 } from "@/assets/images";
 import BlurFade from "@/components/magicui/blur-fade";
+import axios from "axios";
 
 
 const Circle = forwardRef(({ className, children }, ref) => {
@@ -78,35 +79,46 @@ export default function Home() {
     const div5Ref = useRef(null)
     const div6Ref = useRef(null)
     const div7Ref = useRef(null)
+    const [email, setEmail] = useState("")
 
 
-    const handleClick = () => {
-        const duration = 5 * 1000
-        const animationEnd = Date.now() + duration
-        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }
 
-        const randomInRange = (min, max) => Math.random() * (max - min) + min
+    const handleClick = async () => {
+        if (email != "") {
+            await axios.post(`https://script.google.com/macros/s/${import.meta.env.VITE_SCRIPT_KEY}`, email)
+                .then(res => {
+                    console.log("You sent to us email. Thank you :)")
+                    const duration = 5 * 1000
+                    const animationEnd = Date.now() + duration
+                    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }
 
-        const interval = window.setInterval(() => {
-            const timeLeft = animationEnd - Date.now()
+                    const randomInRange = (min, max) => Math.random() * (max - min) + min
 
-            if (timeLeft <= 0) {
-                return clearInterval(interval)
-            }
+                    const interval = window.setInterval(() => {
+                        const timeLeft = animationEnd - Date.now()
 
-            const particleCount = 50 * (timeLeft / duration)
-            confetti({
-                ...defaults,
-                particleCount,
-                origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
-            })
-            confetti({
-                ...defaults,
-                particleCount,
-                origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
-            })
-        }, 250)
+                        if (timeLeft <= 0) {
+                            return clearInterval(interval)
+                        }
+
+                        const particleCount = 50 * (timeLeft / duration)
+                        confetti({
+                            ...defaults,
+                            particleCount,
+                            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+                        })
+                        confetti({
+                            ...defaults,
+                            particleCount,
+                            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+                        })
+                    }, 250)
+                })
+                .catch(err => console.log(err))
+        }
+
     }
+
 
     return (
 
@@ -151,7 +163,7 @@ export default function Home() {
                                 text="GuardAMLBot ile AML/KYC süreclerinizi hızlı ve otomatik hale getirin, uyum maliyetlerinizi azaltın. Güvenli, hızlı ve kolayca yöntilebilir işlemlerle hem işinizi koruyun."
                             />
                             <div className="z-10 relative  w-full md:max-w-sm  items-center space-x-2 flex mt-10 ">
-                                <Input type="email" placeholder="Email adress" className="h-14" />
+                                <Input type="email" name="email" onChange={e => setEmail(e.target.value)} value={email} placeholder="Email adress" className="h-14" />
                                 <Button type="submit" className="h-14" onClick={handleClick}>Join waitlist</Button>
                             </div>
                         </div>
