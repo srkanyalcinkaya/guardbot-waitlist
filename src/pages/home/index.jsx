@@ -171,7 +171,7 @@ export default function Home() {
                     "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
                 )}
             />
-            <main className="mx-auto flex-1 px-6 overflow-hidden relative  md:px-8 mt-20 max-w-[90rem] space-y-20 md:space-y-0  ">
+            <main className="mx-auto flex-1 px-6 overflow-hidden relative  md:px-8 mt-20 max-w-[90rem] space-y-20   ">
                 <section className=" text-center min-h-screen">
 
                     <div className="z-10 relative flex min-h-[4rem] items-center justify-center mb-10">
@@ -296,7 +296,7 @@ export default function Home() {
 
 
                 </section>
-                <section className=" min-h-screen flex flex-col text-center items-center gap-10 ">
+                <section className=" h-full  flex flex-col text-center items-center gap-10 ">
                     <FadeText
                         className="text-3xl md:text-5xl  font-bold text-black text-center dark:text-white "
                         direction="down"
@@ -338,7 +338,7 @@ export default function Home() {
 
                     </div>
                 </section>
-                <section className=" min-h-screen flex flex-col text-center items-center gap-10 ">
+                <section className=" h-full pt-20  flex flex-col text-center items-center gap-10 ">
                     <FadeText
                         className="text-3xl md:text-5xl  font-bold text-black text-center dark:text-white "
                         direction="down"
@@ -371,7 +371,7 @@ export default function Home() {
                                 <ResizableHandle />
                                 <ResizablePanel defaultSize={400}>
                                     <div className="flex h-full items-center justify-center p-12 flex-col gap-4">
-                                        <span className="font-bold text-2xl">Temiz Para Politikası</span>
+                                        <span className="font-bold  md:text-2xl">Temiz Para Politikası</span>
                                         <p  className="text-sm text-gray-400">Her işlemde detaylı AML/KYC kontrolleri yapılarak yasa dışı faaliyetlerin önüne geçilir. Temiz ve güvenli para politikası sağlanır.</p>
                                     </div>
                                 </ResizablePanel>
@@ -379,7 +379,7 @@ export default function Home() {
                         </ResizablePanel>
                     </ResizablePanelGroup>
                 </section>
-                <section className="mx-auto container  min-h-screen flex items-center justify-center" id="faq">
+                <section className="mx-auto container min-h-screen   flex items-center justify-center" id="faq">
                     <div className="w-full h-full">
                         <FadeText
                             className="text-4xl font-bold text-black dark:text-white "
