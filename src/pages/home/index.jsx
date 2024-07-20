@@ -82,10 +82,21 @@ export default function Home() {
     const [email, setEmail] = useState("")
 
 
-    const handleClick = async () => {
-        if (email != "") {
-            await axios.post(`https://script.google.com/macros/s/${import.meta.env.VITE_SCRIPT_KEY}`, email)
-                .then(res => {
+    function Submit(e) {
+        e.preventDefault();
+        const formEle = document.querySelector("form");
+        const formData = new FormData(formEle);
+        fetch(
+            `https://script.google.com/macros/s/${import.meta.env.VITE_SCRIPT_KEY}`,
+            {
+                method: "POST",
+                body: formData
+            }
+        )
+
+            .then((res) => {
+
+                if (res.ok) {
                     console.log("You sent to us email. Thank you :)")
                     const duration = 5 * 1000
                     const animationEnd = Date.now() + duration
@@ -112,11 +123,14 @@ export default function Home() {
                             origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
                         })
                     }, 250)
-                })
-                .catch(err => console.log(err))
-        }
-
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
+
+   
 
 
     return (
@@ -161,10 +175,10 @@ export default function Home() {
                                 }}
                                 text="GuardAMLBot ile AML/KYC süreclerinizi hızlı ve otomatik hale getirin, uyum maliyetlerinizi azaltın. Güvenli, hızlı ve kolayca yöntilebilir işlemlerle hem işinizi koruyun."
                             />
-                            <div className="z-10 relative  w-full md:max-w-sm  items-center space-x-2 flex mt-10 ">
-                                <Input type="email" name="email" onChange={e => setEmail(e.target.value)} value={email} placeholder="Email adress" className="h-14" />
-                                <Button type="submit" className="h-14" onClick={handleClick}>Join waitlist</Button>
-                            </div>
+                                <form onSubmit={(e) => Submit(e)} className="z-10 relative  w-full md:max-w-sm  items-center space-x-2 flex mt-10 ">
+                                    <Input type="email" name="email"  placeholder="Email adress" className="h-14" />
+                                    <Button type="submit" className="h-14">Join waitlist</Button>
+                                </form>
                         </div>
 
                         <div>
