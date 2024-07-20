@@ -84,7 +84,7 @@ export default function Home() {
 
     const handleClick = async () => {
         if (email != "") {
-            await axios.post(`https://script.google.com/macros/s/${import.meta.env.SCRIPT_KEY}`, email)
+            await axios.post(`https://script.google.com/macros/s/${import.meta.env.VITE_SCRIPT_KEY}`, email)
                 .then(res => {
                     console.log("You sent to us email. Thank you :)")
                     const duration = 5 * 1000
