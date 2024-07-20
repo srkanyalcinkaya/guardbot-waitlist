@@ -181,7 +181,7 @@ export default function Home() {
                             )}
                         >
                             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                                <span>✨ Introducing GuardAMLBot</span>
+                                <span>✨ GuardAMLBot ile tanışın</span>
                                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                             </AnimatedShinyText>
                         </a>
@@ -354,7 +354,7 @@ export default function Home() {
                         <ResizablePanel defaultSize={400}>
                             <div className="flex h-[200px] items-center justify-center p-12 flex-col gap-4">
                                 <span className="font-bold text-2xl">Düşük Ücretler</span>
-                                <p  className="text-sm text-gray-400">
+                                <p className="text-sm text-gray-400">
                                     Otomatikleştirilmiş AML/KYC süreçleri sayesinde manuel işlemlere kıyasla daha düşük maliyetler sunulur.
                                 </p>
                             </div>
@@ -372,7 +372,7 @@ export default function Home() {
                                 <ResizablePanel defaultSize={400}>
                                     <div className="flex h-full items-center justify-center p-12 flex-col gap-4">
                                         <span className="font-bold  md:text-2xl">Temiz Para Politikası</span>
-                                        <p  className="text-sm text-gray-400">Her işlemde detaylı AML/KYC kontrolleri yapılarak yasa dışı faaliyetlerin önüne geçilir. Temiz ve güvenli para politikası sağlanır.</p>
+                                        <p className="text-sm text-gray-400">Her işlemde detaylı AML/KYC kontrolleri yapılarak yasa dışı faaliyetlerin önüne geçilir. Temiz ve güvenli para politikası sağlanır.</p>
                                     </div>
                                 </ResizablePanel>
                             </ResizablePanelGroup>
