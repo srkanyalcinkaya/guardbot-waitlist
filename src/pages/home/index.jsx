@@ -387,7 +387,7 @@ export default function Home() {
                             framerProps={{
                                 show: { transition: { delay: 0.6 } },
                             }}
-                            text="FAQs"
+                            text="SSS"
                         />
                         <BlurFade delay={0.25} inView>
                             <div className="flex flex-col md:flex-row items-center gap-12">
