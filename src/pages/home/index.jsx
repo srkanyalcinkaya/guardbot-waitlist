@@ -176,7 +176,7 @@ export default function Home() {
                                 text="GuardAMLBot ile AML/KYC süreclerinizi hızlı ve otomatik hale getirin, uyum maliyetlerinizi azaltın. Güvenli, hızlı ve kolayca yöntilebilir işlemlerle hem işinizi koruyun."
                             />
                                 <form onSubmit={(e) => Submit(e)} className="z-10 relative  w-full md:max-w-sm  items-center space-x-2 flex mt-10 ">
-                                    <Input type="email" name="email"  placeholder="Email adress" className="h-14" />
+                                    <Input type="email" name="Email"  placeholder="Email adress" className="h-14" />
                                     <Button type="submit" className="h-14">Join waitlist</Button>
                                 </form>
                         </div>
